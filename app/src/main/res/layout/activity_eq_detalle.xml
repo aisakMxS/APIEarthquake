@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            type="com.example.appearthqueke.Earthquake"
+            name="Earthquake" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EqDetalle">
+
+        <ImageView
+            android:id="@+id/img_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="-8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jlb_hor"
+            app:srcCompat="@drawable/ic_relog" />
+
+        <TextView
+            android:id="@+id/jlb_hor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="20dp"
+            android:text="@{String.valueOf(Earthquake.time)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_reg"
+            app:layout_constraintTop_toBottomOf="@+id/jlb_det" />
+
+        <TextView
+            android:id="@+id/jlb_lon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@+id/jlb_y"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_lat"
+            android:text="@{String.valueOf(Earthquake.longitude)}"/>
+
+        <TextView
+            android:id="@+id/lbl_lat"
+            android:layout_width="62dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@{String.valueOf(Earthquake.latitude)}"
+            app:layout_constraintStart_toEndOf="@+id/lbl_x"
+            app:layout_constraintTop_toBottomOf="@+id/jlb_mag" />
+
+        <TextView
+            android:id="@+id/jlb_mag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:padding="10dp"
+            android:text="@{String.valueOf(Earthquake.mangnitude)}"
+            android:textAlignment="center"
+            android:textSize="75sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jlb_tit" />
+
+        <TextView
+            android:id="@+id/jlb_rit"
+            android:paddingTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="Richter"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/jlb_mag"
+            app:layout_constraintTop_toBottomOf="@+id/jlb_tit" />
+
+        <ImageView
+            android:id="@+id/img_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lbl_x"
+            app:srcCompat="@drawable/ic_location" />
+
+        <ImageView
+            android:id="@+id/img_det"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jlb_det"
+            app:srcCompat="@drawable/ic_warning" />
+
+        <TextView
+            android:id="@+id/lbl_x"
+            android:layout_width="62dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Latitud :   "
+            app:layout_constraintStart_toEndOf="@+id/img_pos"
+            app:layout_constraintTop_toBottomOf="@+id/jlb_mag" />
+
+        <TextView
+            android:id="@+id/jlb_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Longitud :"
+            app:layout_constraintStart_toEndOf="@+id/img_pos"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_x" />
+
+        <TextView
+            android:id="@+id/jlb_det"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:text="@{Earthquake.place}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_det"
+            app:layout_constraintTop_toBottomOf="@+id/jlb_y" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
